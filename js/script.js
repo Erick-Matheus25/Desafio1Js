@@ -9,12 +9,12 @@ function pergunta() {
     document.getElementById("res1").innerHTML = "seu nome é " + nome;
 }
 
-function mostraTexto() {
-    let texto = document.getElementById("entrada").value;
+function mostrarTexto() {
+    let texto = document.getElementById("campo1").value;
     document.getElementById("res2").innerHTML = "Você escreveu: " + texto;
 }
 
-function soma() {
+function somar() {
     let num1 = parseFloat(document.getElementById("num1").value);
     let num2 = parseFloat(document.getElementById("num2").value);
     if (isNaN(num1) || isNaN(num2)) {
@@ -148,4 +148,41 @@ function ComparadorNumeros() {
         document.getElementById("res15").innerHTML = "O número " + maior + " é maior que o número " + menor;
     }
 }
+function ClassificacaoTriangulos() {
+    let lado1 = parseFloat(prompt("Digite o comprimento do primeiro lado:"));
+    let lado2 = parseFloat(prompt("Digite o comprimento do segundo lado:"));
+    let lado3 = parseFloat(prompt("Digite o comprimento do terceiro lado:"));
+  if(lado1 + lado2 <= lado3 || lado1 + lado3 <= lado2 || lado2 + lado3 <= lado1) {
+        document.getElementById("res16").innerHTML = "Os lados fornecidos não formam um triângulo.";
+        return;
+    }   
+    
+     if(lado1 == lado2 && lado2 == lado3) { 
+        document.getElementById("res16").innerHTML = "O triângulo é Equilátero.";
+     }else if(lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+        document.getElementById("res16").innerHTML = "O triângulo é Isósceles.";
+     }else {
+        document.getElementById("res16").innerHTML = "O triângulo é Escaleno.";
+     }
+}
+function MenuBebidas() {
+    let opcao = prompt("Escolha uma bebida: 1 - suco, 2 - refrigerante ou 3 - agua");
 
+    switch (opcao) {
+        case "1":
+            document.getElementById("res17").innerHTML = "Você escolheu suco!";
+            break;
+
+        case "2":
+            document.getElementById("res17").innerHTML = "Você escolheu refrigerante!";
+            break;
+
+        case "3":
+            document.getElementById("res17").innerHTML = "Você escolheu água!";
+            break;
+
+        default:
+            document.getElementById("res17").innerHTML = "Opção inválida!";
+    }
+}
+              
