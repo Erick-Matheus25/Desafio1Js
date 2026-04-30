@@ -185,4 +185,37 @@ function MenuBebidas() {
             document.getElementById("res17").innerHTML = "Opção inválida!";
     }
 }
-              
+function VogalOuConsoante() {
+    let letra = prompt("Digite uma letra:").toLowerCase();
+    if (letra === "a" || letra === "e" || letra === "i" || letra === "o" || letra === "u") {
+        document.getElementById("res19").innerHTML = "A letra digitada é uma vogal.";
+    } else {
+        document.getElementById("res19").innerHTML = "A letra digitada é uma consoante.";
+    }
+}
+function CalculadoraSimples() {
+    let num1 = parseFloat(prompt("Digite o primeiro número:"));
+    let num2 = parseFloat(prompt("Digite o segundo número:"));
+    let operacao = prompt("Escolha a operação: +, -, *, /");    
+    switch (operacao) {
+        case "+":
+            document.getElementById("res20").innerHTML = "Resultado: " + (num1 + num2);
+            case "-":
+            document.getElementById("res20").innerHTML = "Resultado: " + (num1 - num2);     
+            case "*":
+            document.getElementById("res20").innerHTML = "Resultado: " + (num1 * num2);
+            case "/":
+            if (num2 === 0) {
+                document.getElementById("res20").innerHTML = "Erro: Divisão por zero!";
+            } else {
+                document.getElementById("res20").innerHTML = "Resultado: " + (num1 / num2);
+            }
+        } 
+            
+     
+      
+
+    }
+
+
+         
