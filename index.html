@@ -1,251 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic JavaScript Lab</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Consulta de Alunos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ffffff;
+        }
+        /* Estilização básica do botão */
+        .btn-carregar {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background 0.2s;
+        }
+        .btn-carregar:hover {
+            background-color: #0056b3;
+        }
+        .card-aluno {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .status-ativo { color: #4caf50; font-weight: bold; }
+        .status-inativo { color: #f44336; font-weight: bold; }
+    </style>
 </head>
-
 <body>
-    <main class="page">
-        <div class="container">
-            <header class="hero">
-                <h1>JavaScript - primeiros passos</h1>
-                <p>Experimente lógica, entrada e saída em um painel com visual futurista.</p>
-            </header>
-
-            <section class="card">
-                <h2>1. saída → alert()</h2>
-                <button class="btn" onclick="alert('Olá mundo!')">Clique aqui</button>
-            </section>
-
-            <section class="card">
-                <h2>2. saída → document.write()</h2>
-                <p>Escrever texto diretamente na página.</p>
-                <button class="btn" onclick="minhaFuncao()">Clique aqui</button>
-            </section>
-
-            <section class="card">
-                <h2>3. entrada → prompt()</h2>
-                <p>Pede uma informação ao usuário:</p>
-                <button class="btn" onclick="pergunta()">Clique aqui!</button>
-                <div id="res1" class="resultado"></div>
-            </section>
-
-            <section class="card">
-                <h2>4. entrada - input HTML</h2>
-                <p>Campo de entrada tradicional:</p>
-                <div class="form-row">
-                    <input type="text" id="campo1" placeholder="Digite algo">
-                    <button class="btn btn-secondary" onclick="mostrarTexto()">Enviar</button>
-                </div>
-                <div id="res2" class="resultado"></div>
-            </section>
-
-            <section class="card">
-                <h2>5. somar dois valores</h2>
-                <p>Calculadora simples:</p>
-                <div class="form-row">
-                    <input type="number" id="num1" placeholder="Número 1">
-                    <input type="number" id="num2" placeholder="Número 2">
-                </div>
-                <button class="btn btn-primary" onclick="somar()">Somar</button>
-                <div id="res3" class="resultado"></div>
-            </section>
-            <section class="card">
-                <h2> 6. Média Escolar</h2>
-                <p>Insira as 3 notas:</p>
-                <div class="form-row">
-                    <input type="number" id="nota1" placeholder="Nota 1" min="0" max="10" step="0.1">
-                    <input type="number" id="nota2" placeholder="Nota 2" min="0" max="10" step="0.1">
-                    <input type="number" id="nota3" placeholder="Nota 3" min="0" max="10" step="0.1">
-                </div>
-                <button class="btn btn-primary" onclick="calcularMedia()">Calcular Média</button>
-                <div id="res4" class="resultado"></div>
-            </section>
-            <section class="card">
-                <h2> 7. Conversão de Dólar</h2>
-                <p>Insira o valor em Reais:</p>
-                <div class="form-row">
-                    <input type="number" id="reais" placeholder="Valor em Reais" step="0.01">
-                </div>
-                <button class="btn btn-primary" onclick="converterDolar()">Converter para Dólares</button>
-                <div id="res5" class="resultado"></div>
-            </section>
-            <section class="card">
-
-                <h2> 8. Cálculo de Área do Terreno</h2>
-                <button class="btn" onclick="calcularAreaPrompt()">Calcular Área</button>
-                <div id="res7" class="resultado"></div>
-            </section>
-            <section class="card">
-
-                <h2> 9. Antecessor e Sucessor</h2>
-                <button class="btn" onclick="AntecessorSucessor()">Antecessor e Sucessor</button>
-                <div id="res9" class="resultado"></div>
-            </section>
-            <section class="card">
-
-                <h2> 10. Par ou Ímpar</h2>
-                <button class="btn" onclick="ParOuImpar()">Par ou Ímpar</button>
-                <div id="res10" class="resultado"></div>
-            </section>
-            <section class="card">
-
-                <h2> 11. Radar de Velocidade</h2>
-                <button class="btn" onclick="RadardeVelocidade()">Radar de Velocidade</button>
-                <div id="res11" class="resultado"></div>
-            </section>
-            <section class="card">
-
-                <h2> 12. Maior de Idade (Habilitação)</h2>
-                <button class="btn" onclick="MaiordeIdade()">Maior de Idade</button>
-                <div id="res12" class="resultado"></div>
-            </section>
-            <section class="card">
-
-                <h2> 13. Calculadora de IMC</h2>
-                <button class="btn" onclick="CalculadoraIMC()">Calculadora de IMC</button>
-                <div id="res13" class="resultado"></div>
-            </section>
-            <section class="card">
-
-                <h2> 14. Simulador de Desconto Progressivo</h2>
-                <button class="btn" onclick="SimuladorDesconto()">Simulador de Desconto</button>
-                <div id="res14" class="resultado"></div>
-            </section>
-            <section class="card">
-
-                <h2> 15. Comparador de Números </h2>
-                <button class="btn" onclick="ComparadorNumeros()">Comparador de Números</button>
-                <div id="res15" class="resultado"></div>
-            </section>
-            <section class="card">
-
-                <h2> 16. Classificação de Triângulos</h2>
-                <button class="btn" onclick="ClassificacaoTriangulos()">Classificação de Triângulos</button>
-                <div id="res16" class="resultado"></div>
-            </section>
-<section class="card">
-             <h2> 17.  Menu de Bebidas</h2>
-                <button class="btn" onclick="MenuBebidas()">Menu de Bebidas</button>
-                <div id="res17" class="resultado"></div>
-            </section>
-        
-            <section class="card">
-                 <h2> 18.  Vogal ou Consoante </h2>
-                <button class="btn" onclick="VogalOuConsoante()">Vogal ou Consoante</button>
-                <div id="res18" class="resultado"></div>
-            </section>
-
-             <section class="card">
-                 <h2> 19.  Calculadora Simples </h2>
-                <button class="btn" onclick="CalculadoraSimples()">Calculadora Simples</button>
-                <div id="res19" class="resultado"></div>
-            </section>
-             <h2> 20.   Conversor de Moedas Pro </h2>
-                <button class="btn" onclick=" ConversordeMoedasPro()">Calculadora Simples</button>
-                <div id="res20" class="resultado"></div>
-            </section>
-              <section class="card">
-                    <h2> 21.   Contagem Progressiva </h2>
-                    <p id="resultado"></p>
-                    <button class="btn" onclick="ContagemProgressiva()">Contagem Progressiva</button>
-                    <div id="res21" class="resultado"></div>
-                    </section>
-                <section class="card">
-                    <h2>22. Tabuada Dinâmica</h2>
-                    <p id="resultado"></p>
-                    <button class="btn" onclick="TabuadaDinamica()">Tabuada Dinâmica</button>
-                    <div id="res22" class="resultado"></div>
-                    </section>
-                    <section class="card">
-                    <h2>23. Somador de Números</h2>
-                    <p id="res23"></p>
-                    <button class="btn" onclick="SomadordeNúmeros()">Somador de Números</button>
-                    <div id="res23" class="resultado"></div>
-                    </section>
-                    <section class="card">
-                    <h2>24.Apenas os Pares</h2>
-                    <p id="res24"></p>
-                    <button class="btn" onclick="ApenasOsPares()">Apenas os Pares</button>
-                    <div id="res24" class="resultado"></div>
-                    </section>
-                    <section class="card">
-                    <h2>25.Fatorial de um Número</h2>
-                    <p id="res25"></p>
-                    <button class="btn" onclick="Fatorial()">Fatorial</button>
-                    <div id="res25" class="resultado"></div>
-                    </section>
-                    <section class="card">
-                    <h2>26.Validação de Dados</h2>
-                    <p id="res26"></p>
-                    <button class="btn" onclick="ValidacaoDados()">Validação de Dados</button>
-                    <div id="res26" class="resultado"></div>
-                    </section>
-                        <section class="card"> 
-                    <h2>27. Média de Idades</h2>   
-                    <p id="res27"></p>
-                    <button class="btn" onclick="MediaIdades()">Média de Idades</button>
-                    <div id="res27" class="resultado"></div>
-                    </section>
-                    <section class="card">
-                    <h2>28. Lista de Nomes</h2>
-                    <p id="res28"></p>
-                    <button class="btn" onclick="ListaNomes()">Lista de Nomes</button>
-                    <div id="res28" class="resultado"></div>
-                    </section>
-                    <section class="card">
-                    <h2>29. Maior Valor no Array</h2>
-                    <p id="res29"></p>
-                    <button class="btn" onclick="MaiorValorArray()">Maior Valor no Array</button>
-                    <div id="res29" class="resultado"></div>
-                    </section>
-                    <section class="card">
-                    <h2>30. Inversor de Ordem</h2>
-                    <p id="res30"></p>
-                    <button class="btn" onclick="InversorOrdem()">Inversor de Ordem</button>
-                    <div id="res30" class="resultado"></div>
-                    </section>
-                    <section class="card">
-                    <h2>31. Localizador de Nomes</h2>
-                    <p id="res31"></p>
-                    <button class="btn" onclick="LocalizadordeNomes()">Localizadorde Nomes   </button>
-                    <div id="res31" class="resultado"></div> 
-                    </section>
-                    <section class="card">
-                    <h2>32. Filtro de Notas</h2>
-                    <p id="res32"></p>
-                    <button class="btn" onclick="FiltroNotas()">Filtro de Notas</button>
-                    <div id="res32" class="resultado"></div>          
-                      </section>   
-                      <section class="card">
-                    <h2>33.  Login de Acesso </h2>
-                    <p id="res33"></p>
-                    <button class="btn" onclick="LogindeAcesso()"> LogindedeAcesso </button>
-                    <div id="res33" class="resultado"></div>          
-                      </section> 
-                       <section class="card">
-                    <h2>34.  Média de Vendas Mensais  </h2>
-                    <p id="res34"></p>
-                    <button onclick="MediadeVendasMensais()">Calcular</button>
-                    <div id="res34" class="resultado"></div>          
-                      </section> 
-                        <section class="card">
-                    <h2>35.  Carrinho de Compras Simples  </h2>
-                    <p id="res35"></p>
-                    <button class="btn" onclick="carrinhodeCompras()">Carrinho de Compras</button>
-                    <div id="res35" class="resultado"></div>          
-                      </section> 
-
-
-
-
-
-        </div>
-    </main>
-<Script src="./js/script.js"></script>
-
-</body>
-</html>
